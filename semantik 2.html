@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow: hidden; 
+        }
+        header {
+            background-color: rgba(26, 26, 26, 0.8);
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            width: 220px;
+            float: left;
+            background-color: rgba(51, 51, 51, 0.8);
+            height: 100vh;
+            padding: 15px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            position: fixed;
+        }
+        nav a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s, text-shadow 0.3s;
+            position: relative;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        nav a::after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 100%;
+            background-color: #FFFFFF; 
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        main {
+            margin-left: 240px;
+            padding: 20px;
+            position: relative; /* Posisi relative untuk mengatur wallpaper */
+            z-index: 1; /* Pastikan main section di atas gambar */
+        }
+        section {
+            display: none; 
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(34, 34, 34, 0.8);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        h2 {
+            color: #00FF00; /* Neon green */
+        }
+        .profile-photo {
+            width: 150px;
+            border-radius: 50%;
+            border: 5px solid #00FF00; /* Neon green border */
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+        }
+        form input, form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        form button {
+            padding: 10px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        form button:hover {
+            background-color: #777;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(26, 26, 26, 0.8);
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons img {
+            width: 30px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        /* Styling untuk GIF background */
+        .gif-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Pastikan GIF di belakang */
+            object-fit: cover;
+        }
+        /* Styling untuk tabel */
+        .contact-table {
+            max-height: 200px;
+            overflow-y: scroll;
+            background-color: rgba(34, 34, 34, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .contact-table table {
+            width: 100%;
+            color: white;
+            border-collapse: collapse;
+        }
+        .contact-table th, .contact-table td {
+            padding: 8px;
+            border: 1px solid #555;
+        }
+    </style>
+</head>
+<body>
+    <img src="81c09c4945c8e456de37c350a42f7af9.gif" alt="Background GIF" class="gif-background">
+    
+    <header>
+        <h1>My Portfolio</h1>
+    </header>
+    <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('data-diri')">Data Diri</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
+        <a href="#" onclick="showSection('portfolio')">Portfolio</a>
+    </nav>
+    <main>
+        <section id="home">
+            <h2>Welcome to My Portfolio</h2>
+            <p>Halo Nama Saya Abel saya adalah seorang pelajar SMP</p>
+            <p>Silahkan click tabel di kiri untuk melihat lebih lanjut</p>
+        </section>
+        <section id="data-diri">
+            <h2>Data Diri</h2>
+            <img src="abel.jfif" alt="Profile Photo" class="profile-photo">
+            <div class="contact-table">
+                <h2>My Contact Info</h2>
+                <table>
+                    <tr>
+                        <th style="text-align: left;">Type</th>
+                        <th style="text-align: left;">Details</th>
+                    </tr>
+                    <tr>
+                        <td>Personal Email</td>
+                        <td>abel@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>School Email</td>
+                        <td>9642yulius@kanisius.sch.id</td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number</td>
+                        <td>081808593080</td>
+                    </tr>
+                    <tr>
+                        <td>LinkedIn</td>
+                        <td><a href="https://www.linkedin.com/in/your-profile" style="color: #00FF00;">Profile Link</a></td>
+                    </tr>
+                    <tr>
+                        <td>Instagram</td>
+                        <td><a href="https://www.instagram.com/your-username" style="color: #00FF00;">@your-username</a></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <ul>
+                <li>Amateur Boxer/Self Thought</li>
+                <li>Volleyball Player</li>
+                <li>Computer Common Knowledge</li>
+                <li>Lua Developer</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            
+            <div class="social-icons">
+                <a href="https://www.instagram.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"></a>
+                <a href="https://wa.me/your-number" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
+                <a href="https://www.linkedin.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg" alt="LinkedIn"></a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(section => {
+                section.style.display = 'none'; // Sembunyikan semua section
+            });
+            document.getElementById(sectionId).style.display = 'block'; // Tampilkan section yang dipilih
+        }
+
+        
+        showSection('home');
+    </script>
+</body>
+</html>
